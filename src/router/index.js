@@ -10,7 +10,7 @@ let router = new VueRouter({
       redirect: '/login'
     },
     {
-      path: '/readme',
+      path: '/home',
       component: resolve => require(['../components/common/Home.vue'], resolve),
       children: [
         {
@@ -48,6 +48,10 @@ let router = new VueRouter({
         {
           path: '/drag',
           component: resolve => require(['../components/page/DragList.vue'], resolve)    // 拖拽列表组件
+        },
+        {
+          path: '/finace/balance',
+          component: resolve => require(['../components/page/finace/balance/index.vue'], resolve)    // 拖拽列表组件
         }
       ]
     },
