@@ -106,6 +106,21 @@
             title: '拖拽'
           },
           {
+            icon: 'el-icon-upload2',
+            index: '5',
+            title: '客户管理',
+            subs: [
+              {
+                index: '/customerManagement',
+                title: '客户管理'
+              },
+              {
+                index: '/addClient',
+                title: '添加客户'
+              }
+            ]
+          },
+          {
             icon: 'el-icon-setting',
             index: 'preferences',
             title: '参数设置'
@@ -129,7 +144,7 @@
     left: 0;
     top: 45px;
     bottom: 0;
-    /*background: #2E363F;*/
+    background: #2E363F;
   }
 
   .sidebar > ul {

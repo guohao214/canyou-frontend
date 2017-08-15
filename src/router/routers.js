@@ -7,7 +7,7 @@ export default [
     component: resolve => require(['../components/common/Home.vue'], resolve),
     children: [
       {
-        path: '/',
+        path: '/readme',
         component: resolve => require(['../components/pages/Readme.vue'], resolve)
       },
       {
@@ -45,6 +45,14 @@ export default [
       {
         path: '/preferences',
           component: resolve => require(['../components/pages/preferences/preferences.vue'], resolve)    // 拖拽列表组件
+      },
+      {
+        path: '/addClient',
+          component: resolve => require(['../components/pages/customerManagement/addClient/index.vue'], resolve)    // 拖拽列表组件
+      },
+      {
+        path: '/customerManagement',
+          component: resolve => require(['../components/pages/customerManagement/customerManagement/index.vue'], resolve)    // 拖拽列表组件
       }
     ]
   }
