@@ -9,6 +9,7 @@
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="在线支付" name="online">在线支付</el-tab-pane>
       <el-tab-pane label="线下支付" name="offline">
+        <el-button type="success" @click="addAccountFormVisible = true">新增</el-button>
         <el-table
           :data="data"
           border
@@ -56,7 +57,7 @@
     data() {
       return {
         activeName: 'offline',
-        addAccountFormVisible: true,
+        addAccountFormVisible: false,
         formLabelWidth: '120px',
         loading: false,
         form: {
