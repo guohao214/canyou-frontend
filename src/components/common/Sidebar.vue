@@ -46,6 +46,14 @@
               {
                 index: '/finance/account',
                 title: '收款账户'
+              },
+              {
+                index: '/finance/balanceList',
+                title: '收支明细'
+              },
+              {
+                index: '/finance/balanceConfirm',
+                title: '收款确认'
               }
             ]
           },

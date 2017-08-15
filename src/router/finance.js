@@ -17,5 +17,9 @@ export default [
   {
     path: '/finance/balanceList',
     component: resolve => require(['../components/pages/finance/balanceList/index.vue'], resolve)
+  },
+  {
+    path: '/finance/balanceConfirm',
+    component: resolve => require(['../components/pages/finance/balanceConfirm/index.vue'], resolve)
   }
 ]
