@@ -42,6 +42,10 @@ export default [
         path: '/drag',
         component: resolve => require(['../components/pages/DragList.vue'], resolve)    // 拖拽列表组件
       },
+      {
+        path: '/preferences',
+          component: resolve => require(['../components/pages/preferences/preferences.vue'], resolve)    // 拖拽列表组件
+      }
     ]
   }
 ]

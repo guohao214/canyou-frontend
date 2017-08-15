@@ -96,6 +96,11 @@
             icon: 'el-icon-upload2',
             index: 'drag',
             title: '拖拽'
+          },
+          {
+            icon: 'el-icon-setting',
+            index: 'preferences',
+            title: '参数设置'
           }
         ]
       }
