@@ -32,6 +32,25 @@
           },
           {
             icon: 'el-icon-menu',
+            index: '4',
+            title: '财务管理',
+            subs: [
+              {
+                index: '/finance/balance',
+                title: '我的资金'
+              },
+              {
+                index: '/finance/withdrawDeposit',
+                title: '提现管理'
+              },
+              {
+                index: '/finance/account',
+                title: '收款账户'
+              }
+            ]
+          },
+          {
+            icon: 'el-icon-menu',
             index: '2',
             title: '表格',
             subs: [

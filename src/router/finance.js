@@ -9,5 +9,9 @@ export default [
   {
     path: '/finance/withdrawDeposit',
     component: resolve => require(['../components/pages/finance/withdrawDeposit/index.vue'], resolve)
+  },
+  {
+    path: '/finance/account',
+    component: resolve => require(['../components/pages/finance/account/index.vue'], resolve)
   }
 ]
