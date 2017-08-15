@@ -2,7 +2,7 @@
   <div class="table">
     <div class="crumbs">
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item><i class="el-icon-menu"></i> 客户管理</el-breadcrumb-item>
+        <el-breadcrumb-item> 客户管理</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="handle-box">
@@ -11,11 +11,11 @@
           下拉菜单<i class="el-icon-caret-bottom el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="a" divided>黄金糕</el-dropdown-item>
-          <el-dropdown-item command="b" divided>狮子头</el-dropdown-item>
-          <el-dropdown-item command="c" divided>螺蛳粉</el-dropdown-item>
-          <el-dropdown-item command="d" divided>双皮奶</el-dropdown-item>
-          <el-dropdown-item command="e" divided>蚵仔煎</el-dropdown-item>
+          <el-dropdown-item command="a">黄金糕</el-dropdown-item>
+          <el-dropdown-item command="b">狮子头</el-dropdown-item>
+          <el-dropdown-item command="c">螺蛳粉</el-dropdown-item>
+          <el-dropdown-item command="d">双皮奶</el-dropdown-item>
+          <el-dropdown-item command="e">蚵仔煎</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
       <el-input v-model="select_word" placeholder="请输入客户名称/编码/订货账号/联系人/手机" class="handle-input mr10"></el-input>

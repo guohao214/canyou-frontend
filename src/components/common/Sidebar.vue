@@ -111,11 +111,11 @@
             title: '客户管理',
             subs: [
               {
-                index: '/customerManagement',
+                index: 'customerManagement',
                 title: '客户管理'
               },
               {
-                index: '/addClient',
+                index: 'addClient',
                 title: '添加客户'
               }
             ]
