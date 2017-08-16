@@ -59,6 +59,21 @@
           },
           {
             icon: 'el-icon-menu',
+            index: '5',
+            title: '订单管理',
+            subs: [
+              {
+                index: '/order/list',
+                title: '列表'
+              },
+              {
+                index: '/order/approval',
+                title: '审核'
+              },
+            ]
+          },
+          {
+            icon: 'el-icon-menu',
             index: '2',
             title: '表格',
             subs: [
