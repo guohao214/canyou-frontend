@@ -1,19 +1,95 @@
-.title
-  width: 80px
-  text-align: center
-  line-height: 35px
-  padding-left: 12px
+.clearFix:after{
+  clear:both;
+  display:block;
+  visibility:hidden;
+  height:0;
+  line-height:0;
+  content:'';
 
-.width50
-  width: 49%
-  margin-right: 0
+}
+.clearFix{
+  zoom:1;
+  clear: both;
+} /*解决ie6/7兼容问题*/
 
-.el-form--inline
-  .el-form-item__content
-    width: 70%;
+#addClientWrap
+  .clearFix
+    margin-bottom : 20px
+  .width100
+    width: 100%
+    .el-form-item__label
+      width : 8% !important
+    .el-form-item__content
+      width : 42%
+  .width50
+    width: 50%;
+    margin-right: 0 !important;
+    .el-form-item__content
+      width : 42%
+    .el-form-item__label
+      width : 16% !important
+    .el-form-item__content
+      width : 84%
+    &.both-more
+      .el-form-item__content
+        width : 100%
+        .el-form-item__content
+          width: 68%
+    .width50
+      .el-form-item__label
+        width: 32% !important
+  .width25
+    width: 25%
+    .el-input
+      width: 50%
+  .el-form-item
+    float : left
+  .form
+    width : 100%
+  .title
+    width: 100%
+    float: left
+    padding: 17px 0 10px 0
+    font-size: 17px
+    span
+      width: 80px
+      text-align: center
+      line-height: 35px
+      padding-left: 12px
+  .possword-wrap
+    span
+      display: inline-block
+      width: 20%
+      background: #cccccc
+      margin-right: 3px
+      margin: 11px 12px 11px 0
+      text-align: center
+      color: #ffffff
+      line-height : 21px
+  .btm
+    width: 100%
+    float: left
+    margin: 45px 0 20px 0
+    text-align : center
+  .el-date-editor--datetimerange
+    width: 100%
+    .el-input
+      width: 100%
 
-.el-date-editor--datetimerange
-  .el-input
-    width: 100%;
-
-
+  .el-date-editor
+    .el-input
+      width: 100%
+  .account-infor-wrap
+    margin-bottom : 30px
+    .bl
+      display : inline-block
+      color : #00d1b2
+      padding-left: 12px
+      padding-right : 5px
+    .el-checkbox__label
+      color :red
+      font-weight : bold
+      padding-left : 5px
+    .bl-title
+      font-size : 14px
+      color: #797979
