@@ -27,7 +27,7 @@
         items: [
           {
             icon: 'el-icon-setting',
-            index: 'readme',
+            index: '/readme',
             title: '自述'
           },
           {
@@ -78,11 +78,11 @@
             title: '表格',
             subs: [
               {
-                index: 'basetable',
+                index: '/basetable',
                 title: '基础表格'
               },
               {
-                index: 'vuetable',
+                index: '/vuetable',
                 title: 'Vue表格组件'
               }
             ]
@@ -93,31 +93,31 @@
             title: '表单',
             subs: [
               {
-                index: 'baseform',
+                index: '/baseform',
                 title: '基本表单'
               },
               {
-                index: 'vueeditor',
+                index: '/vueeditor',
                 title: '编辑器'
               },
               {
-                index: 'markdown',
+                index: '/markdown',
                 title: 'markdown'
               },
               {
-                index: 'upload',
+                index: '/upload',
                 title: '文件上传'
               }
             ]
           },
           {
             icon: 'el-icon-star-on',
-            index: 'basecharts',
+            index: '/basecharts',
             title: '图表'
           },
           {
             icon: 'el-icon-upload2',
-            index: 'drag',
+            index: '/drag',
             title: '拖拽'
           },
           {
@@ -126,18 +126,18 @@
             title: '客户管理',
             subs: [
               {
-                index: 'customerManagement',
+                index: '/customerManagement',
                 title: '客户管理'
               },
               {
-                index: 'addClient',
+                index: '/addClient',
                 title: '添加客户'
               }
             ]
           },
           {
             icon: 'el-icon-setting',
-            index: 'preferences',
+            index: '/preferences',
             title: '参数设置'
           }
         ]
