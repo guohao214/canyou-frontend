@@ -1,5 +1,11 @@
 <template>
   <div>
+    <div class="crumbs">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item> 仓库管理</el-breadcrumb-item>
+        <el-breadcrumb-item> 列表</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <el-table
       :data="tableData"
       style="width: 100%"
