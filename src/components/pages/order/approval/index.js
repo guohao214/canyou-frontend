@@ -1,9 +1,13 @@
-import orderDetail from './components/detail.vue'
+import orderDetail from './components/orderDetail.vue'
+import deliverGoods from './components/deliverGoods.vue'
+import orderCash from './components/orderCash.vue'
 
 export default {
   data() {
     return {
       activeName: 'first',
+      showToolbar: true,
+      isEdit: false,
       loading: false,
       url: './static/vuetable.json',
       tableData: [],
@@ -18,8 +22,15 @@ export default {
     }
 
   },
+  watch: {
+    activeName() {
+      this.showToolbar = (this.activeName === 'first') ? true : false
+    }
+  },
   components: {
-    orderDetail
+    orderDetail,
+    deliverGoods,
+    orderCash
   },
   created(){
     this.getData();
@@ -47,6 +58,14 @@ export default {
     }
   },
   methods: {
+    edit: function () {
+      debugger
+      alert(1)
+      this.isEdit =  true
+    },
+    handleClick() {
+
+    },
     handleCurrentChange(val){
       this.cur_page = val;
       this.getData();
