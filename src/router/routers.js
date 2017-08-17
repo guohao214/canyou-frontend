@@ -51,8 +51,8 @@ export default [
           component: resolve => require(['../components/pages/customerManagement/addClient/index.vue'], resolve)    // 拖拽列表组件
       },
       {
-        path: '/customerManagement',
-          component: resolve => require(['../components/pages/customerManagement/customerManagement/index.vue'], resolve)    // 拖拽列表组件
+        path: '/list',
+          component: resolve => require(['../components/pages/customerManagement/list/index.vue'], resolve)    // 拖拽列表组件
       },
       {
         path: '/account',

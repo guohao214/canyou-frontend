@@ -61,10 +61,14 @@ module.exports = {
       }
     ]
   },
-    // plugins: [
-    //     new webpack.DllReferencePlugin({
-    //       context: path.resolve(__dirname, '..'),
-    //       manifest: require('./vendor-manifest.json')
-    //     })
-    // ]
+    plugins: [
+        // new webpack.DllReferencePlugin({
+        //   context: path.resolve(__dirname, '..'),
+        //   manifest: require('./vendor-manifest.json')
+        // })
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+      })
+    ]
 }

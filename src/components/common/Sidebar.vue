@@ -79,11 +79,11 @@
             title: '客户管理',
             subs: [
               {
-                index: '/customerManagement',
-                title: '客户管理'
+                index: '/customerManagement/list',
+                title: '列表'
               },
               {
-                index: '/addClient',
+                index: '/customerManagement/addClient',
                 title: '添加客户'
               }
             ]
@@ -92,6 +92,25 @@
             icon: 'el-icon-setting',
             index: '/preferences',
             title: '参数设置'
+          },
+          {
+            icon: 'el-icon-upload2',
+            index: '8',
+            title: '仓库管理',
+            subs: [
+              {
+                index: '/storeManagement/list',
+                title: '列表'
+              },
+              {
+                index: '/storeManagement/add',
+                title: '新增'
+              },
+              {
+                index: '/storeManagement/revise',
+                title: '修改'
+              }
+            ]
           },
           {
             icon: 'el-icon-menu',

@@ -3,7 +3,11 @@
  */
 export default [
   {
+    path: '/customerManagement/list',
+    component: resolve => require(['../components/pages/customerManagement/list/index.vue'], resolve)
+  },
+  {
     path: '/customerManagement/addClient',
-    component: resolve => require(['../components/pages/finance/balance/index.vue'], resolve)
+    component: resolve => require(['../components/pages/customerManagement/addClient/index.vue'], resolve)
   }
 ]

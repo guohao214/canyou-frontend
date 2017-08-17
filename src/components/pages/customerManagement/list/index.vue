@@ -151,6 +151,7 @@
         this.$router.push('/addClient')
       },
       handleCommand(command) {
+          this.handleCurrentChange()
         this.$message('click on item ' + command);
       }
     }
