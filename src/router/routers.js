@@ -53,7 +53,11 @@ export default [
       {
         path: '/customerManagement',
           component: resolve => require(['../components/pages/customerManagement/customerManagement/index.vue'], resolve)    // 拖拽列表组件
-      }
+      },
+      {
+        path: '/account',
+        component: resolve => require(['../components/pages/account/index.vue'], resolve)    // 账号管理
+      },
     ]
   }
 ]

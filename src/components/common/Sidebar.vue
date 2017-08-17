@@ -73,6 +73,11 @@
             ]
           },
           {
+            icon: 'el-icon-document',
+            index: '/account',
+            title: '账号管理',
+          },
+          {
             icon: 'el-icon-menu',
             index: '2',
             title: '表格',
