@@ -3,7 +3,7 @@
     <div class="crumbs">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item> 仓库管理</el-breadcrumb-item>
-        <el-breadcrumb-item> 新增</el-breadcrumb-item>
+        <el-breadcrumb-item> 修改</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
