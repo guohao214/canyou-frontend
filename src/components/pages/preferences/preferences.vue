@@ -23,7 +23,7 @@
           </el-input>
         </div>
       </div>
-      <span style="color: #333;font-size: 18px;margin-bottom: 40px;display: inline-block">库存不足是否可以下单</span>
+      <span style="width:100%;margin-top:30px;color: #333;font-size: 18px;margin-bottom: 40px;display: inline-block">库存不足是否可以下单</span>
       <el-form-item label="">
         <el-radio-group v-model="form.resource">
           <el-radio label="可以"></el-radio>

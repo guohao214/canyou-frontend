@@ -103,13 +103,21 @@
                 title: '列表'
               },
               {
+                index: '/commodity/turnoverDetail',
+                title: '出入库明细'
+              },
+              {
                 index: '/commodity/add',
                 title: '新增'
               },
               {
                 index: '/commodity/revise',
-                title: '修改'
-              }
+                title: '商品入库'
+              },
+              {
+                index: '/commodity/revise',
+                title: '商品出库'
+              },
             ]
           },
           {

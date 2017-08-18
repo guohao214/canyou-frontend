@@ -1,14 +1,13 @@
-
 <template>
   <div class="table">
     <div class="crumbs">
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item>商品管理</el-breadcrumb-item>
-        <el-breadcrumb-item>列表</el-breadcrumb-item>
+        <el-breadcrumb-item> 商品管理</el-breadcrumb-item>
+        <el-breadcrumb-item> 出入库明细</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="handle-box">
-      <el-select v-model="value" placeholder="选择分类">
+      <el-select style="width: 120px;" v-model="value" placeholder="选择分类">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -16,7 +15,7 @@
           :value="item.value">
         </el-option>
       </el-select>
-      <el-select v-model="value" placeholder="选择状态">
+      <el-select style="width: 120px;" v-model="value" placeholder="选择状态">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -24,76 +23,62 @@
           :value="item.value">
         </el-option>
       </el-select>
-      <el-input v-model="select_word" placeholder="输入商品名称/编码" class="handle-input mr10"></el-input>
-      <el-button type="primary" icon="search" @click="search">搜索</el-button>
+        <el-date-picker
+          v-model="value3"
+          type="datetimerange"
+          placeholder="选择时间范围">
+        </el-date-picker>
+      <el-input v-model="select_word" placeholder="输入商品名称/编码" class="handle-input mr10">
+      </el-input>
+      <el-button type="primary"  icon="search" @click="search"></el-button>
       <div class="fl-r">
-        <el-button type="primary" @click="addClientUrl">添加</el-button>
+        <el-button type="primary" @click="outCurrentFile">导出</el-button>
       </div>
     </div>
-    <el-table :data="tableData" border style="width: 100%"
+    <el-table :data="data" border style="width: 100%"
               ref="multipleTable"
               @selection-change="handleSelectionChange"
               v-loading="loading">
-      <!--<el-table-column type="selection" width="55"></el-table-column>-->
-      <el-table-column prop="name" label="商品图片" width="150">
-        <template scope="scope">
-          <img v-bind:src="name" alt="" width="60" height="60">
-        </template>
+      <el-table-column prop="name" label="编码" width="150">
       </el-table-column>
-      <el-table-column prop="name" label="商品编码" sortable width="120">
+      <el-table-column prop="name" label="商品名称" width="120">
       </el-table-column>
-      <el-table-column prop="name" label="商品名称" sortable>
-      </el-table-column>
-      <el-table-column prop="name" label="商品规格">
+      <el-table-column prop="name" label="规格">
       </el-table-column>
       <el-table-column prop="name" label="单位">
       </el-table-column>
-      <el-table-column prop="name" label="市场价" sortable>
+      <el-table-column prop="name" label="所属仓库">
       </el-table-column>
-      <el-table-column prop="name" label="成本参考价">
+      <el-table-column prop="name" label="类型">
       </el-table-column>
-      <el-table-column prop="name" label="库存数量">
+      <el-table-column prop="name" label="单号">
       </el-table-column>
-      <el-table-column prop="name" label="预购">
+      <el-table-column prop="name" label="出入库日期">
       </el-table-column>
-      <el-table-column prop="name" label="库存成本">
+      <el-table-column prop="name" label="出入库数量">
       </el-table-column>
-      <el-table-column prop="name" label="状态">
-      </el-table-column>
-      <el-table-column prop="name" label="新增时间">
-      </el-table-column>
-      <el-table-column prop="name" label="修改时间">
+      <el-table-column prop="name" label="库存量">
       </el-table-column>
       <el-table-column
         fixed="right"
         label="操作"
         width="100">
         <template scope="scope">
-          <el-button type="text" size="small">修改</el-button>
-          <el-button type="text" size="small" @click="dialogVisible = true">删除</el-button>
+          <el-button @click="openDetail" type="text" size="small">查看明细</el-button>
         </template>
       </el-table-column>
     </el-table>
     <div class="pagination">
       <el-pagination
+        @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
-        :current-page.sync="currentPage"
-        :page-size="100"
-        layout="prev, pager, next"
-        :total="1000">
+        :current-page="1"
+        :page-sizes="[30, 60, 120, 240]"
+        :page-size="10"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="240">
       </el-pagination>
     </div>
-    <el-dialog
-      title="提示"
-      :visible.sync="dialogVisible"
-      size="tiny"
-      :before-close="handleClose">
-      <span>确认删除？</span>
-      <span slot="footer" class="dialog-footer">
-            <el-button @click="dialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-        </span>
-    </el-dialog>
   </div>
 </template>
 
@@ -118,7 +103,7 @@
           label: '北京烤鸭'
         }],
         value: '',
-
+        value3:'',
         loading: false,
         url: './static/vuetable.json',
         tableData: [],
@@ -127,8 +112,7 @@
         //select_cate: '',
         select_word: '',
         del_list: [],
-        is_search: false,
-        dialogVisible: false
+        is_search: false
       }
     },
     created(){
@@ -157,6 +141,9 @@
       handleCurrentChange(val){
         this.cur_page = val;
         this.getData();
+      },
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
       },
       getData(){
         this.loading = true;
@@ -198,20 +185,11 @@
       handleSelectionChange(val) {
         this.multipleSelection = val;
       },
-      addClientUrl () {
-        this.$router.push('/commodity/add')
+      outCurrentFile () {
+        this.$alert('已导出文件')
       },
-      handleCommand(command) {
-          this.handleCurrentChange()
-        this.$message('click on item ' + command);
-      },
-      handleClose(done) {
-          alert(6)
-        this.$confirm('确认关闭？')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
+      openDetail() {
+        this.$alert('查看明细')
       }
     }
   }
