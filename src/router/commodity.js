@@ -10,8 +10,8 @@ export default [
     path: '/commodity/turnoverDetail',
     component: resolve => require(['../components/pages/commodity/turnoverDetail/index.vue'], resolve)
   },
-  // {
-  //   path: '/commodity/revise',
-  //   component: resolve => require(['../components/pages/commodity/revise/index.vue'], resolve)
-  // }
+  {
+    path: '/commodity/putAway',
+    component: resolve => require(['../components/pages/commodity/putAway/index.vue'], resolve)
+  }
 ]

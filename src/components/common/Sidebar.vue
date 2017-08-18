@@ -111,7 +111,7 @@
                 title: '新增'
               },
               {
-                index: '/commodity/revise',
+                index: '/commodity/putAway',
                 title: '商品入库'
               },
               {

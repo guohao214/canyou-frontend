@@ -78,22 +78,11 @@
       <el-pagination
         @current-change="handleCurrentChange"
         :current-page.sync="currentPage"
-        :page-size="100"
+        :page-size="10"
         layout="prev, pager, next"
         :total="1000">
       </el-pagination>
     </div>
-    <el-dialog
-      title="提示"
-      :visible.sync="dialogVisible"
-      size="tiny"
-      :before-close="handleClose">
-      <span>确认删除？</span>
-      <span slot="footer" class="dialog-footer">
-            <el-button @click="dialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-        </span>
-    </el-dialog>
   </div>
 </template>
 
@@ -206,7 +195,7 @@
         this.$message('click on item ' + command);
       },
       handleClose(done) {
-          alert(6)
+
         this.$confirm('确认关闭？')
           .then(_ => {
             done();

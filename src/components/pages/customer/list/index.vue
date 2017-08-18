@@ -53,9 +53,8 @@
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="1"
-        :page-sizes="[30, 60, 120, 240]"
         :page-size="10"
-        layout="total, sizes, prev, pager, next, jumper"
+        layout="prev, pager, next"
         :total="240">
       </el-pagination>
     </div>

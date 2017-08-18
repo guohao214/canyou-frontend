@@ -1,58 +1,78 @@
+
 <template>
-  <div>
+  <div class="table">
     <div class="crumbs">
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item> 仓库管理</el-breadcrumb-item>
-        <el-breadcrumb-item> 列表</el-breadcrumb-item>
+        <el-breadcrumb-item>商品管理</el-breadcrumb-item>
+        <el-breadcrumb-item>列表</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <el-table
-      :data="tableData"
-      style="width: 100%"
-      ref="multipleTable"
-      @selection-change="handleSelectionChange"
-      v-loading="loading"
-    >
-      <el-table-column
-        prop="date"
-        label="仓库名称"
-        width="180">
+    <div class="handle-box">
+      <el-select v-model="value" placeholder="选择分类">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value">
+        </el-option>
+      </el-select>
+      <el-date-picker
+        v-model="value3"
+        type="datetime"
+        placeholder="选择日期时间">
+      </el-date-picker>
+    </div>
+    <el-table :data="tableData" border style="width: 100%"
+              ref="multipleTable"
+              @selection-change="handleSelectionChange"
+              v-loading="loading">
+      <el-table-column type="index" label="" width="55"></el-table-column>
+      <el-table-column prop="name" label="商品编码" sortable width="120">
       </el-table-column>
-      <el-table-column
-        prop="name"
-        label="仓库编号"
-        width="180">
+      <el-table-column prop="name" label="商品名称">
       </el-table-column>
-      <el-table-column
-        prop="address"
-        label="仓库地址">
+      <el-table-column prop="name" label="规格">
       </el-table-column>
-      <el-table-column label="操作">
+      <el-table-column prop="name" label="入库数量">
         <template scope="scope">
-          <el-button size="small">修改</el-button>
-          <el-button size="small" type="danger"  @click="dialogVisible = true">删除</el-button>
+          <el-input v-model="scope.row.name" placeholder=""></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column
+        label="备注"
+        width="100"
+        algin="center"
+        show-overflow-tooltip
+        align="center"
+      >
+        <template scope="scope">
+          <el-button style="text-align: center;font-size: 20px;color: #000"
+                     type="text" @click="dialogVisible = true" size="small">+</el-button>
         </template>
       </el-table-column>
     </el-table>
     <div class="pagination">
       <el-pagination
-        @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page.sync="currentPage"
-        :page-size="10"
+        :page-size="100"
         layout="prev, pager, next"
-        :total="1000">
-      >
+        >
       </el-pagination>
     </div>
-
     <el-dialog
-      title="提示"
+      title="备注"
       :visible.sync="dialogVisible"
       size="tiny"
       :before-close="handleClose">
-        <span>确认删除？</span>
-        <span slot="footer" class="dialog-footer">
+      <el-input
+        type="textarea"
+        :rows="2"
+        placeholder="请输入内容"
+        v-model="value3">
+      </el-input>
+
+      <span slot="footer" class="dialog-footer">
             <el-button @click="dialogVisible = false">取 消</el-button>
             <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
         </span>
@@ -64,8 +84,24 @@
   export default {
     data() {
       return {
-        currentPage:1,
-        dialogVisible: false,
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: '',
+        value3:'',
         loading: false,
         url: './static/vuetable.json',
         tableData: [],
@@ -74,7 +110,8 @@
         //select_cate: '',
         select_word: '',
         del_list: [],
-        is_search: false
+        is_search: false,
+        dialogVisible: false
       }
     },
     created(){
@@ -103,9 +140,6 @@
       handleCurrentChange(val){
         this.cur_page = val;
         this.getData();
-      },
-      handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
       },
       getData(){
         this.loading = true;
@@ -148,13 +182,14 @@
         this.multipleSelection = val;
       },
       addClientUrl () {
-        this.$router.push('/addClient')
+        this.$router.push('/commodity/add')
       },
       handleCommand(command) {
-        this.handleCurrentChange()
+          this.handleCurrentChange()
         this.$message('click on item ' + command);
       },
       handleClose(done) {
+          alert(6)
         this.$confirm('确认关闭？')
           .then(_ => {
             done();
@@ -182,3 +217,4 @@
     float: right;
   }
 </style>
+
