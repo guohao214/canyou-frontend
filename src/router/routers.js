@@ -47,14 +47,6 @@ export default [
           component: resolve => require(['../components/pages/preferences/preferences.vue'], resolve)    // 拖拽列表组件
       },
       {
-        path: '/addClient',
-          component: resolve => require(['../components/pages/customerManagement/addClient/index.vue'], resolve)    // 拖拽列表组件
-      },
-      {
-        path: '/list',
-          component: resolve => require(['../components/pages/customerManagement/list/index.vue'], resolve)    // 拖拽列表组件
-      },
-      {
         path: '/account',
         component: resolve => require(['../components/pages/account/index.vue'], resolve)    // 账号管理
       },

@@ -79,11 +79,11 @@
             title: '客户管理',
             subs: [
               {
-                index: '/customerManagement/list',
+                index: '/customer/list',
                 title: '列表'
               },
               {
-                index: '/customerManagement/addClient',
+                index: '/customer/addClient',
                 title: '添加客户'
               }
             ]
@@ -95,19 +95,38 @@
           },
           {
             icon: 'el-icon-upload2',
+            index: '7',
+            title: '商品管理',
+            subs: [
+              {
+                index: '/commodity/list',
+                title: '列表'
+              },
+              {
+                index: '/commodity/add',
+                title: '新增'
+              },
+              {
+                index: '/commodity/revise',
+                title: '修改'
+              }
+            ]
+          },
+          {
+            icon: 'el-icon-upload2',
             index: '8',
             title: '仓库管理',
             subs: [
               {
-                index: '/storeManagement/list',
+                index: '/store/list',
                 title: '列表'
               },
               {
-                index: '/storeManagement/add',
+                index: '/store/add',
                 title: '新增'
               },
               {
-                index: '/storeManagement/revise',
+                index: '/store/revise',
                 title: '修改'
               }
             ]
