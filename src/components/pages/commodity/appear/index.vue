@@ -4,7 +4,7 @@
     <div class="crumbs">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item>商品管理</el-breadcrumb-item>
-        <el-breadcrumb-item>商品入库</el-breadcrumb-item>
+        <el-breadcrumb-item>商品出库</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="handle-box">

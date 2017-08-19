@@ -13,5 +13,13 @@ export default [
   {
     path: '/commodity/putAway',
     component: resolve => require(['../components/pages/commodity/putAway/index.vue'], resolve)
+  },
+  {
+    path: '/commodity/add',
+    component: resolve => require(['../components/pages/commodity/add/index.vue'], resolve)
+  },
+  {
+    path: '/commodity/appear',
+    component: resolve => require(['../components/pages/commodity/appear/index.vue'], resolve)
   }
 ]

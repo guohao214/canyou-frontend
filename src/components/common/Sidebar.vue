@@ -115,7 +115,7 @@
                 title: '商品入库'
               },
               {
-                index: '/commodity/revise',
+                index: '/commodity/appear',
                 title: '商品出库'
               },
             ]
@@ -195,6 +195,7 @@
 </script>
 
 <style scoped>
+
   .sidebar {
     display: block;
     position: absolute;
